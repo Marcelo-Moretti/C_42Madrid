@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoretti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/09 19:27:36 by mmoretti          #+#    #+#             */
+/*   Updated: 2024/10/17 19:20:12 by mmoretti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <libft.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
@@ -11,18 +23,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-/*
-Prototipo void ft_striteri(char *s, void (*f)(unsigned int,
-char*));
-Archivos a entregar
--
-Parámetros s: La string que iterar.
-f: La función a aplicar sobre cada carácter.
-Valor devuelto Nada
-Funciones autorizadas
-Ninguna
-Descripción A cada carácter de la string ’s’, aplica la función
-’f’ dando como parámetros el índice de cada
-carácter dentro de ’s’ y la dirección del propio
-carácter, que podrá modificarse si es necesario.
-*/

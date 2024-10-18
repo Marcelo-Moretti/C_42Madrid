@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoretti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/09 19:25:07 by mmoretti          #+#    #+#             */
+/*   Updated: 2024/10/17 20:08:37 by mmoretti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <libft.h>
 
 static void	ft_freeup(char *strs)
@@ -74,25 +86,25 @@ static char	*ft_stralloc(char *str, char c, int *k)
 	return (word);
 }
 
-char	**ft_split(char const *str, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**strs;
 	int		i;
 	int		j;
 	int		pos;
 
-	if (str == NULL)
+	if (s == NULL)
 		return (NULL);
 	i = 0;
 	pos = 0;
-	j = ft_wordcount((char *)str, c);
+	j = ft_wordcount((char *)s, c);
 	strs = (char **)malloc(sizeof(char *) * (j + 1));
 	if (strs == NULL)
 		return (NULL);
 	strs[j] = NULL;
 	while (i < j)
 	{
-		strs[i] = ft_stralloc(((char *)str), c, &pos);
+		strs[i] = ft_stralloc(((char *)s), c, &pos);
 		if (strs[i] == NULL)
 		{
 			ft_freeup(strs[i]);
@@ -101,19 +113,3 @@ char	**ft_split(char const *str, char c)
 	}
 	return (strs);
 }
-/*
-Prototipo char **ft_split(char const *s, char c);
-Archivos a entregar
--
-Parámetros s: La string a separar.
-c: El carácter delimitador.
-Valor devuelto El array de nuevas strings resultante de la
-separación.
-NULL si falla la reserva de memoria.
-Funciones autorizadas
-malloc, free
-Descripción Reserva (utilizando malloc(3)) un array de strings
-resultante de separar la string ’s’ en substrings
-utilizando el caracter ’c’ como delimitador. El
-array debe terminar con un puntero NULL.
-*/

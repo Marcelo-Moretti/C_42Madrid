@@ -1,11 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoretti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/09 17:44:01 by mmoretti          #+#    #+#             */
+/*   Updated: 2024/10/17 18:55:57 by mmoretti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <libft.h>
 
-/*checks if 'c' is a number*/
-int	ft_isdigit (int	c)
+int	ft_isdigit(int c)
 {
-	while (c >= 48 && c <= 57)
+	while (c >= 0 && c <= 9)
 	{
 		return (1);
 	}
-	return	(0);
+	return (0);
 }
+
+/*
+int main(void)
+{
+	int	num;
+
+	num = 5;
+	write(1, ft_isdigit(num), 1);
+	return (0);
+}
+*/

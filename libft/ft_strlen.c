@@ -1,16 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoretti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/09 18:03:24 by mmoretti          #+#    #+#             */
+/*   Updated: 2024/10/17 19:52:06 by mmoretti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <libft.h>
 
-/*strlen recibe un puntero s y retorna el tamaño del puntero*/
 size_t	ft_strlen(const char *s)
 {
-	int	len;
+	int	counter;
 
-/*agrego un contador en '0' 
-quien se incrementará hasta llegar a un valor nulo*/
-	len = '0';
-	while (s[len] != '\0')
+	counter = 0;
+	while (s[counter] != '\0')
 	{
-		len = len++;
+		counter++;
 	}
-	return len;
+	return (counter);
 }
+/*
+int main(void)
+{
+	char	str1;
+	char	str2;
+
+	str1 = 'hello ';
+	str2 = 'world!!!!';
+	write(1, ft_strlen(str1), ft_strlen(str1));
+	write(1, ft_strlen(str2), ft_strlen(str2));
+	return (0);
+}
+*/

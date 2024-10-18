@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoretti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/09 19:24:49 by mmoretti          #+#    #+#             */
+/*   Updated: 2024/10/15 16:44:24 by mmoretti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <libft.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -21,19 +33,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (str);
 }
-/*
-Prototipo char *ft_strtrim(char const *s1, char const *set);
-Archivos a entregar
--
-Parámetros s1: La string que debe ser recortada.
-set: Los caracteres a eliminar de la string.
-Valor devuelto La string recortada.
-NULL si falla la reserva de memoria.
-Funciones autorizadas
-malloc
-Descripción Elimina todos los caracteres de la string ’set’
-desde el principio y desde el final de ’s1’, hasta
-encontrar un caracter no perteneciente a ’set’. La
-string resultante se devuelve con una reserva de
-malloc(3)
-*/
