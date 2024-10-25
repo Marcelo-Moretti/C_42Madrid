@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoretti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmoretti <mmoretti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 19:25:07 by mmoretti          #+#    #+#             */
-/*   Updated: 2024/10/17 20:08:37 by mmoretti         ###   ########.fr       */
+/*   Updated: 2024/10/25 17:52:07 by mmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 static void	ft_freeup(char *strs)
 {
@@ -113,3 +113,5 @@ char	**ft_split(char const *s, char c)
 	}
 	return (strs);
 }
+
+/*help*/

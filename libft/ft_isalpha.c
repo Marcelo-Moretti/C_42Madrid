@@ -10,24 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
-	while ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-	{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
-	}
 	return (0);
 }
-
 /*
-int main(void)
-{
-	char	num;
+int main() {
+    int i = 0;
 
-	num = 'cinco';
-	write(1, ft_isalpha(num), 1);
-	return (0);
+    while (i < 130)
+    {
+        if (ft_isalpha(i))
+        {
+            write(1, "is alpha", 8);
+        } else {
+            write(1, "no alpha", 8);
+        }
+        i++;
+    }
+
+    write(1, "\n", 1);
+    return 0;
 }
 */

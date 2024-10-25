@@ -10,28 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_tolower(int i)
 {
-	if (i >= 'a' && i <= 'z')
+	if (i >= 'A' && i <= 'Z')
 		return (i + 32);
 	return (i);
 }
 
 /*
-int	main(void)
+int main()
 {
-	if (ft_tolower('A' - 1) == 'A' - 1)
-	{
-		if (ft_tolower('A' + 1) == 'A' + 1)
-		{
-			if (ft_tolower('A') == 'a' && ft_toupper('Z') == 'z')
-			{
-				write(1, 'ok\n', 3);
-			}
-		}
-	}
-	return (0);
+    char test_str[] = "Hola Mundo! ABC XYZ";
+    char result[sizeof(test_str)];
+    size_t index = 0;
+
+    while (test_str[index] != '\0') {
+        result[index] = ft_tolower(test_str[index]);
+        index++;
+    }
+    result[index] = '\0';
+
+    write(1, result, sizeof(result) - 1);
+
+    return 0;
 }
 */

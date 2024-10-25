@@ -10,22 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*str1;
-	char	*str2;
-	size_t	i;
+	const unsigned char	*string1;
+	const unsigned char	*string2;
+	size_t				counter;
 
-	i = 0;
-	str1 = (char *)s1;
-	str2 = (char *)s2;
-	while (i < n)
+	counter = 0;
+	string1 = (const unsigned char *)s1;
+	string2 = (const unsigned char *)s2;
+	while (counter < n)
 	{
-		if (str1[i] != str2[i])
-			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
-		i++;
+		if (string1[counter] != string2[counter])
+			return (string1[counter] - string2[counter]);
+		counter++;
 	}
 	return (0);
 }
+/*
+int main()
+{
+    char str1[] = "Hola";
+    char str2[] = "Hola!";
+    
+    int result = ft_memcmp(str1, str2, 5);
+    if (result == 0) {
+        write(1, "Iguales\n", 8);
+    } else if (result < 0) {
+        write(1, "str1 es menor\n", 15);
+    } else {
+        write(1, "str1 es mayor\n", 15);
+    }
+
+    return 0;
+}
+*/

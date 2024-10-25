@@ -10,24 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
-	while (c >= 0 && c <= 9)
-	{
+	if (c >= '0' && c <= '9')
 		return (1);
-	}
 	return (0);
 }
-
 /*
-int main(void)
+int main()
 {
-	int	num;
+    int i = 0;
 
-	num = 5;
-	write(1, ft_isdigit(num), 1);
-	return (0);
+    while (i < 130)
+    {
+        if (ft_isdigit(i))
+        {
+            write(1, "is digit", 8);
+        } else {
+            write(1, "no digit", 8);
+        }
+        i++;
+    }
+
+    write(1, "\n", 1);
+    return 0;
 }
 */

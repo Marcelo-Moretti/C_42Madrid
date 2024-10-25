@@ -10,27 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
-	while (c >= 0 && c <= 127)
-	{
+	if (c >= 0 && c <= 127)
 		return (1);
-	}
 	return (0);
 }
-
 /*
-int main(void)
+int main() 
 {
-	int	num;
-	char	word;
+    int i = 0;
 
-	num = 5;
-	word = 'hello';
-	write(1, ft_isascii(num), 1);
-	write(1, ft_isascii(word), 1);
-	return (0);
+    while (i < 130)
+    {
+        if (ft_isascii(i))
+        {
+            write(1, "is ascii", 8);
+        } else {
+            write(1, "no ascii", 8);
+        }
+        i++;
+    }
+
+    write(1, "\n", 1);
+    return 0;
 }
 */

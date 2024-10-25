@@ -10,20 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*str;
-	size_t	i;
+	const unsigned char	*string;
+	size_t				counter;
 
-	i = 0;
-	str = (char *)s;
-	while (i < n)
+	counter = 0;
+	string = (const unsigned char *)s;
+	while (counter < n)
 	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((char *)s + i);
-		i++;
+		if (string[counter] == (unsigned char)c)
+			return ((void *)(string + counter));
+		counter++;
 	}
 	return (NULL);
 }
+/*
+int main()
+{
+	const char *str = "Hola Mundo!";
+	char *result;
+
+	result = ft_memchr(str, 'M', 12);
+
+	if (result != NULL) {
+		write(1, result, 8);
+	} 
+	else
+	{
+		write(1, "No encontrado\n", 15);
+	}
+
+	return 0;
+}
+*/

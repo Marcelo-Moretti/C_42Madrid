@@ -10,27 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {
-	while (ft_isalpha(c) || ft_isdigit(c))
-	{
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
-	}
 	return (0);
 }
-
 /*
-int main(void)
+int main()
 {
-	int	num;
-	char	word;
+    int i = 0;
 
-	num = 5;
-	word = 'hello';
-	write(1, ft_isalnum(num), 1);
-	write(1, ft_isalnum(word), 1);
-	return (0);
+    while (i < 130)
+    {
+        if (ft_isalnum(i))
+        {
+            write(1, "is alnum", 8);
+        } else {
+            write(1, "no alnum", 8);
+        }
+        i++;
+    }
+
+    write(1, "\n", 1);
+    return 0;
 }
 */

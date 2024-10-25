@@ -10,26 +10,59 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
-	int		i;
-	int		j;
-	char	*str;
+	size_t	counter;
+	size_t	length;
+	char	*string;
 
-	i = 0;
-	j = ft_strlen(s);
-	str = (char *)malloc(sizeof(*str) * (j + 1));
-	if (str == NULL)
-	{
+	if (s == NULL)
 		return (NULL);
-	}
-	while (i < j)
+	counter = 0;
+	length = ft_strlen(s) + 1;
+	string = (char *)malloc(length);
+	if (string == NULL || length == 0)
+		return (NULL);
+	while (counter < length)
 	{
-		str[i] = s[i];
-		i++;
+		string[counter] = s[counter];
+		counter++;
 	}
-	str[i] = '\0';
-	return (str);
+	string[counter] = '\0';
+	return (string);
 }
+/*
+void write_string(const char *str) {
+    if (str) {
+        write(1, str, strlen(str));
+    } else {
+        write(1, "(null)\n", 7);
+    }
+}
+
+int main() {
+    const char *original1 = "Hola, mundo!";
+    const char *original2 = NULL;
+    char *copia1;
+    char *copia2;
+
+    copia1 = ft_strdup(original1);
+    write(1, "Original: ", 10);
+    write_string(original1);
+    write(1, "\nCopia: ", 8);
+    write_string(copia1);
+    write(1, "\n", 1);
+
+    copia2 = ft_strdup(original2);
+    write(1, "Original: (null)\nCopia: ", 25);
+    write_string(copia2);
+    write(1, "\n", 1);
+
+    free(copia1);
+    free(copia2);
+
+    return 0;
+}
+*/

@@ -10,42 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
 	size_t			counter;
 	unsigned char	*string;
 
-	while (s != NULL)
+	counter = 0;
+	string = s;
+	while (counter < n)
 	{
-		counter = 0;
-		string = s;
-		while (counter <= n)
-		{
-			string[counter] = 0;
-			counter++;
-		}
-		return (string);
+		string[counter] = 0;
+		counter++;
 	}
 }
-
 /*
-int main(void)
+int main()
 {
-	char array[20]="hola estrella";
-	int array_int[7]= {-1,5,200,13,1,11,10};
-	size_t numberof;
-	int i;
+	char	buffer[10];
+	int		i = 0;
 
-	numberof = 5;
-	ft_bzero(array, numberof);
-	ft_bzero(array_int, 1);	
-	i = 0;
-	while (i < 7)
-	{
-		printf("[%d]\n", array_int[i]);
+	while (i < 10) {
+		buffer[i] = 'A' + i;
 		i++;
 	}
+
+	ft_bzero(buffer, 5);
+
+	write(1, buffer, 10);
+
+	return (0);
 }
 */

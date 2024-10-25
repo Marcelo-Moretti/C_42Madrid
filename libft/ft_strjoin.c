@@ -10,29 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		j;
-	char	*str;
+	int		s1_counter;
+	int		s2_counter;
+	char	*string;
 
-	i = 0;
-	j = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (str == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	while (s1[i] != '\0')
+	s1_counter = 0;
+	s2_counter = 0;
+	string = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (string == NULL)
+		return (NULL);
+	while (s1[s1_counter] != '\0')
 	{
-		str[i] = s1[i];
-		i++;
+		string[s1_counter] = s1[s1_counter];
+		s1_counter++;
 	}
-	while (s2[j] != '\0')
+	while (s2[s2_counter] != '\0')
 	{
-		str[i + j] = s2[j];
-		j++;
+		string[s1_counter + s2_counter] = s2[s2_counter];
+		s2_counter++;
 	}
-	str[i + j] = '\0';
-	return (str);
+	string[s1_counter + s2_counter] = '\0';
+	return (string);
 }
+/*int main() {
+    char *s1 = "Hola, ";
+    char *s2 = "mundo!\n";
+    char *result = ft_strjoin(s1, s2);
+    
+    if (result != NULL) {
+        write(1, result, strlen(result));
+        free(result);
+    } else {
+        char *error_msg = "Error al unir las cadenas.\n";
+        write(2, error_msg, strlen(error_msg));
+    }
+
+    return 0;
+}*/

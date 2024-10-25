@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_toupper(int i)
 {
@@ -20,18 +20,20 @@ int	ft_toupper(int i)
 }
 
 /*
-int	main(void)
+int main()
 {
-	if (ft_toupper('a' - 1) == 'a' - 1)
-	{
-		if (ft_toupper('a' + 1) == 'a' + 1)
-		{
-			if (ft_toupper('a') == 'A' && ft_toupper('z') == 'Z')
-			{
-				write(1, 'ok\n', 3);
-			}
-		}
-	}
-	return (0);
+    char test_str[] = "hola mundo! abc xyz";
+    char result[sizeof(test_str)];
+    size_t index = 0;
+
+    while (test_str[index] != '\0') {
+        result[index] = ft_toupper(test_str[index]);
+        index++;
+    }
+    result[index] = '\0';
+
+    write(1, result, sizeof(result) - 1);
+
+    return 0;
 }
 */

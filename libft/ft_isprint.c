@@ -10,27 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
-	while (c >= 32 && c <= 127)
-	{
+	if (c >= 32 && c <= 126)
 		return (1);
-	}
 	return (0);
 }
-
 /*
-int main(void)
+int main()
 {
-	int	num;
-	char	word;
+    int i = 0;
 
-	num = 5;
-	word = 'hello';
-	write(1, ft_isprint(num), 1);
-	write(1, ft_isprint(word), 1);
-	return (0);
+    while (i < 130)
+    {
+        if (ft_isprint(i))
+        {
+            write(1, "is printable", 12);
+        } else {
+            write(1, "no printable", 12);
+        }
+        i++;
+    }
+    
+    write(1, "\n", 1);
+    return 0;
 }
 */

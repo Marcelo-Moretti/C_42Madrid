@@ -3,23 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoretti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmoretti <mmoretti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 19:28:28 by mmoretti          #+#    #+#             */
-/*   Updated: 2024/10/15 19:43:31 by mmoretti         ###   ########.fr       */
+/*   Updated: 2024/10/25 18:04:23 by mmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (c != NULL)
-	{
-		write(fd, &c, 1);
-	}
+	write(fd, &c, 1);
 }
-
 /*
 int main(void)
 {

@@ -10,31 +10,74 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	neg;
-	int	res;
+	int	counter;
+	int	negative;
+	int	result;
 
-	i = 0;
-	neg = 1;
-	res = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	counter = 0;
+	negative = 1;
+	result = 0;
+	while (nptr[counter] == ' ' || (nptr[counter] >= 9 && nptr[counter] <= 13))
+		counter++;
+	if (nptr[counter] == '-' || nptr[counter] == '+')
 	{
-		i++;
+		if (nptr[counter] == '-')
+			negative *= -1;
+		counter++;
 	}
-	if (str[i] == '-' || str[i] == '+')
+	while (nptr[counter] != '\0' && ft_isdigit(nptr[counter]))
 	{
-		if (str[i] == '-')
-			neg *= -1;
-		i++;
+		result = (result * 10) + ((nptr[counter] - '0'));
+		counter++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = (str[i] - '0') + (res * 10);
-		i++;
-	}
-	return (res * neg);
+	return (result * negative);
 }
+/*
+void write_number(int num)
+{
+    char buffer[12];
+    int len = 0;
+    
+    if (num < 0) {
+        write(1, "-", 1);
+        num = -num;
+    }
+    
+    if (num == 0) {
+        buffer[len++] = '0';
+    } else {
+        while (num > 0) {
+            buffer[len++] = (num % 10) + '0';
+            num /= 10;
+        }
+    }
+
+    while (len > 0) {
+        write(1, &buffer[--len], 1);
+    }
+}
+
+int main()
+{
+    const char *test1 = "   -42";
+    const char *test2 = "123";
+    const char *test3 = "   +456";
+    const char *test4 = "   -123abc";
+
+    write(1, "Resultado de ft_atoi:\n", 23);
+    write_number(ft_atoi(test1));
+    write(1, "\n", 1);
+    write_number(ft_atoi(test2));
+    write(1, "\n", 1);
+    write_number(ft_atoi(test3));
+    write(1, "\n", 1);
+    write_number(ft_atoi(test4));
+    write(1, "\n", 1);
+
+    return 0;
+}
+*/

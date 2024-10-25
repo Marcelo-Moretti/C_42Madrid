@@ -3,50 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoretti <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mmoretti <mmoretti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:13:28 by mmoretti          #+#    #+#             */
-/*   Updated: 2024/10/17 19:36:41 by mmoretti         ###   ########.fr       */
+/*   Updated: 2024/10/25 17:41:53 by mmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int				counter;
+	size_t			counter;
 	unsigned char	*string;
 
-	while (s != NULL)
+	counter = 0;
+	string = s;
+	while (counter < n)
 	{
-		counter = 0;
-		string = s;
-		while (counter <= n)
-		{
-			string[counter] = c;
-			counter++;
-		}
+		string[counter] = c;
+		counter++;
 	}
 	return (string);
 }
 /*
-int	main(void)
+int main()
 {
-	size_t	size;
-	char	character;
-	int		pointer[20];
-	int		intero;
+    char	buffer[10];
+    int		i;
 
-	intero = 257;
-	size = 7;
-	character = 'A';
-	write(1, ft_memset(&intero, 0, 1), ft_strlen(string));
-	write(1, intero, ft_strlen(string));
-	write(1, ft_memset(pointer, character, size), ft_strlen(string));
-	write(1, memset(pointer + 1, 190, 3), ft_strlen(string));
-	write(1, ft_memset(pointer, character, 0), ft_strlen(string));
-	write(1, ft_memset(pointer, '\0', size), ft_strlen(string));
-	write(1, ft_memset(pointer, '7', size), ft_strlen(string));
-	write(1, memset(NULL, character, size), ft_strlen(string));
+	i = 0;
+    while (i < 10)
+	{
+        buffer[i] = 'X';
+        i++;
+    }
+
+    ft_memset(buffer, 'A', 5);
+
+    write(1, buffer, 10);
+
+    return 0;
 }
 */
