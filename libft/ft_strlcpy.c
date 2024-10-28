@@ -6,7 +6,7 @@
 /*   By: mmoretti <mmoretti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 19:12:04 by mmoretti          #+#    #+#             */
-/*   Updated: 2024/10/25 21:31:54 by mmoretti         ###   ########.fr       */
+/*   Updated: 2024/10/28 18:33:10 by mmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,27 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t	i;
+	size_t	counter;
 
-	if (dest == NULL || src == NULL)
-		return (0);
-	i = 0;
-	while (i < (size - 1) && src[i] != '\0')
+	counter = 0;
+	if (size == 0)
 	{
-		dest[i] = src[i];
-		i++;
+		while (src[counter])
+			counter++;
+		return (counter);
 	}
-	dest[i] = '\0';
-	while (src[i])
-		i++;
-	return (i);
+	while (counter < (size - 1) && src[counter] != '\0')
+	{
+		dest[counter] = src[counter];
+		counter++;
+	}
+	if (counter < size)
+		dest[counter] = '\0';
+	while (src[counter])
+		counter++;
+	return (counter);
 }
+
 /*int	main(void)
 {
 	char		dest[10];

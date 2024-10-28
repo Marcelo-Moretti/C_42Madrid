@@ -6,7 +6,7 @@
 /*   By: mmoretti <mmoretti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 19:12:38 by mmoretti          #+#    #+#             */
-/*   Updated: 2024/10/25 22:07:42 by mmoretti         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:50:36 by mmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,21 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	dst_size;
-	size_t	src_size;
-	size_t	total_size;
-	size_t	diff_size;
+	size_t	counter_one;
+	size_t	counter_two;
 
-	if ((dst == NULL) || (src == NULL))
-		return (0);
-	dst_size = ft_strlen(dst);
-	src_size = ft_strlen(src);
-	total_size = dst_size + src_size;
-	diff_size = size - src_size - 1;
-	if (dst_size >= size)
-		return (size + src_size);
-	while (*src != '\0' && total_size > 0)
+	counter_one = 0;
+	counter_two = 0;
+	while (dst[counter_one] && counter_one < size)
+		counter_one++;
+	while (src[counter_two] && (counter_one + counter_two + 1) < size)
 	{
-		dst[dst_size++] = *src++;
-		diff_size--;
+		dst[counter_one + counter_two] = src[counter_two];
+		counter_two++;
 	}
-	dst[dst_size] = '\0';
-	return (total_size);
+	if (counter_one < size)
+		dst[counter_one + counter_two] = '\0';
+	return (counter_one + ft_strlen(src));
 }
 /*
 int main()

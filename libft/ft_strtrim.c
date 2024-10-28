@@ -6,7 +6,7 @@
 /*   By: mmoretti <mmoretti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 19:24:49 by mmoretti          #+#    #+#             */
-/*   Updated: 2024/10/25 22:04:16 by mmoretti         ###   ########.fr       */
+/*   Updated: 2024/10/28 18:59:31 by mmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,24 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	start;
-	size_t	end;
-	char	*trimmed;
+	size_t	i;
+	size_t	j;
+	char	*string;
 
-	if (s1 == NULL || set == NULL)
-		return (NULL);
-	start = 0;
-	end = ft_strlen(s1) - 1;
-	trimmed = 0;
-	while ((s1[start] != '\0') && (ft_strchr(set, s1[start]) != NULL))
-		start++;
-	while ((end != 0) && (ft_strchr(s1, set[end]) != NULL))
-		end--;
-	trimmed = ft_substr(s1, start, (end - start + 1));
-	if (trimmed == NULL)
-		return (NULL);
-	return ((void *)(trimmed));
+	string = 0;
+	if (s1 != 0 && set != 0)
+	{
+		i = 0;
+		j = ft_strlen(s1);
+		while (s1[i] && ft_strchr(set, s1[i]))
+			i++;
+		while (s1[j - 1] && ft_strchr(set, s1[j - 1]) && j > i)
+			j--;
+		string = (char *)malloc(sizeof(char) * (j - i + 1));
+		if (string)
+			ft_strlcpy(string, &s1[i], j - i + 1);
+	}
+	return (string);
 }
 /*
 void	ft_putstr(const char *s)

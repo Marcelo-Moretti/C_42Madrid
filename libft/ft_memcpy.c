@@ -6,7 +6,7 @@
 /*   By: mmoretti <mmoretti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:26:55 by mmoretti          #+#    #+#             */
-/*   Updated: 2024/10/25 20:25:34 by mmoretti         ###   ########.fr       */
+/*   Updated: 2024/10/28 18:25:55 by mmoretti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t				counter;
-	unsigned char		*destiny;
-	const unsigned char	*source;
+	size_t		counter;
+	char		*destiny;
+	const char	*source;
 
-	counter = 0;
-	if (dest == NULL || src == NULL)
+	if (!dest && !src)
 		return (NULL);
-	destiny = (unsigned char *)dest;
-	source = (unsigned char *)src;
+	counter = 0;
+	destiny = (char *)dest;
+	source = (const char *)src;
 	while (counter < n)
 	{
 		destiny[counter] = source[counter];
